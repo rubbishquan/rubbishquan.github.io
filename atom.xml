@@ -4,9 +4,9 @@
   <subtitle>坚决贯彻落实字少才会有人看的写作原则</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://rubbishquan.github.io/"/>
   <updated>2016-10-12T04:34:57.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://rubbishquan.github.io/</id>
   
   <author>
     <name>Pinker</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>终极奥秘(读永恒的终结有感)</title>
-    <link href="http://yoursite.com/2016/09/21/%E6%B0%B8%E6%81%92%E7%9A%84%E7%BB%88%E7%BB%93/"/>
-    <id>http://yoursite.com/2016/09/21/永恒的终结/</id>
+    <link href="https://rubbishquan.github.io/2016/09/21/%E6%B0%B8%E6%81%92%E7%9A%84%E7%BB%88%E7%BB%93/"/>
+    <id>https://rubbishquan.github.io/2016/09/21/永恒的终结/</id>
     <published>2016-09-21T12:30:49.000Z</published>
     <updated>2016-10-12T04:34:57.000Z</updated>
     
@@ -32,14 +32,14 @@
     </summary>
     
     
-      <category term="书评" scheme="http://yoursite.com/tags/%E4%B9%A6%E8%AF%84/"/>
+      <category term="书评" scheme="https://rubbishquan.github.io/tags/%E4%B9%A6%E8%AF%84/"/>
     
   </entry>
   
   <entry>
     <title>森村诚一的童话世界(人性的证明书评)</title>
-    <link href="http://yoursite.com/2016/09/21/%E6%A3%AE%E6%9D%91%E8%AF%9A%E4%B8%80%E7%9A%84%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C(%E4%BA%BA%E6%80%A7%E7%9A%84%E8%AF%81%E6%98%8E%E4%B9%A6%E8%AF%84)md/"/>
-    <id>http://yoursite.com/2016/09/21/森村诚一的童话世界(人性的证明书评)md/</id>
+    <link href="https://rubbishquan.github.io/2016/09/21/%E6%A3%AE%E6%9D%91%E8%AF%9A%E4%B8%80%E7%9A%84%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C(%E4%BA%BA%E6%80%A7%E7%9A%84%E8%AF%81%E6%98%8E%E4%B9%A6%E8%AF%84)md/"/>
+    <id>https://rubbishquan.github.io/2016/09/21/森村诚一的童话世界(人性的证明书评)md/</id>
     <published>2016-09-21T03:07:49.000Z</published>
     <updated>2016-10-12T04:34:57.000Z</updated>
     
@@ -53,14 +53,14 @@
     </summary>
     
     
-      <category term="书评" scheme="http://yoursite.com/tags/%E4%B9%A6%E8%AF%84/"/>
+      <category term="书评" scheme="https://rubbishquan.github.io/tags/%E4%B9%A6%E8%AF%84/"/>
     
   </entry>
   
   <entry>
     <title>my first page</title>
-    <link href="http://yoursite.com/2016/08/10/my-first-page/"/>
-    <id>http://yoursite.com/2016/08/10/my-first-page/</id>
+    <link href="https://rubbishquan.github.io/2016/08/10/my-first-page/"/>
+    <id>https://rubbishquan.github.io/2016/08/10/my-first-page/</id>
     <published>2016-08-10T14:10:09.000Z</published>
     <updated>2016-10-12T04:34:57.000Z</updated>
     
@@ -83,18 +83,18 @@
     </summary>
     
     
-      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+      <category term="html" scheme="https://rubbishquan.github.io/tags/html/"/>
     
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+      <category term="css" scheme="https://rubbishquan.github.io/tags/css/"/>
     
-      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+      <category term="vue" scheme="https://rubbishquan.github.io/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>浮生若梦(乱世儿女影评)</title>
-    <link href="http://yoursite.com/2016/07/27/%E6%B5%AE%E7%94%9F%E8%8B%A5%E6%A2%A6-%E4%B9%B1%E4%B8%96%E5%84%BF%E5%A5%B3%E5%BD%B1%E8%AF%84/"/>
-    <id>http://yoursite.com/2016/07/27/浮生若梦-乱世儿女影评/</id>
+    <link href="https://rubbishquan.github.io/2016/07/27/%E6%B5%AE%E7%94%9F%E8%8B%A5%E6%A2%A6-%E4%B9%B1%E4%B8%96%E5%84%BF%E5%A5%B3%E5%BD%B1%E8%AF%84/"/>
+    <id>https://rubbishquan.github.io/2016/07/27/浮生若梦-乱世儿女影评/</id>
     <published>2016-07-27T04:35:05.000Z</published>
     <updated>2016-10-12T04:34:57.000Z</updated>
     
@@ -120,14 +120,14 @@
     </summary>
     
     
-      <category term="影评" scheme="http://yoursite.com/tags/%E5%BD%B1%E8%AF%84/"/>
+      <category term="影评" scheme="https://rubbishquan.github.io/tags/%E5%BD%B1%E8%AF%84/"/>
     
   </entry>
   
   <entry>
     <title>失语(切腹影评)</title>
-    <link href="http://yoursite.com/2016/06/28/%E5%A4%B1%E8%AF%AD-%E5%88%87%E8%85%B9%E5%BD%B1%E8%AF%84/"/>
-    <id>http://yoursite.com/2016/06/28/失语-切腹影评/</id>
+    <link href="https://rubbishquan.github.io/2016/06/28/%E5%A4%B1%E8%AF%AD-%E5%88%87%E8%85%B9%E5%BD%B1%E8%AF%84/"/>
+    <id>https://rubbishquan.github.io/2016/06/28/失语-切腹影评/</id>
     <published>2016-06-28T11:36:45.000Z</published>
     <updated>2016-10-12T04:34:57.000Z</updated>
     
@@ -154,14 +154,14 @@
     </summary>
     
     
-      <category term="影评" scheme="http://yoursite.com/tags/%E5%BD%B1%E8%AF%84/"/>
+      <category term="影评" scheme="https://rubbishquan.github.io/tags/%E5%BD%B1%E8%AF%84/"/>
     
   </entry>
   
   <entry>
     <title>在乏味的鼓舞中停止自杀(闻香识女人影评)</title>
-    <link href="http://yoursite.com/2016/05/11/%E5%9C%A8%E4%B9%8F%E5%91%B3%E7%9A%84%E9%BC%93%E8%88%9E%E4%B8%AD%E5%81%9C%E6%AD%A2%E8%87%AA%E6%9D%80-%E9%97%BB%E9%A6%99%E8%AF%86%E5%A5%B3%E4%BA%BA%E5%BD%B1%E8%AF%84/"/>
-    <id>http://yoursite.com/2016/05/11/在乏味的鼓舞中停止自杀-闻香识女人影评/</id>
+    <link href="https://rubbishquan.github.io/2016/05/11/%E5%9C%A8%E4%B9%8F%E5%91%B3%E7%9A%84%E9%BC%93%E8%88%9E%E4%B8%AD%E5%81%9C%E6%AD%A2%E8%87%AA%E6%9D%80-%E9%97%BB%E9%A6%99%E8%AF%86%E5%A5%B3%E4%BA%BA%E5%BD%B1%E8%AF%84/"/>
+    <id>https://rubbishquan.github.io/2016/05/11/在乏味的鼓舞中停止自杀-闻香识女人影评/</id>
     <published>2016-05-10T16:11:25.000Z</published>
     <updated>2016-10-12T04:34:57.000Z</updated>
     
@@ -195,14 +195,14 @@ You understand?&#x201D;
     </summary>
     
     
-      <category term="影评" scheme="http://yoursite.com/tags/%E5%BD%B1%E8%AF%84/"/>
+      <category term="影评" scheme="https://rubbishquan.github.io/tags/%E5%BD%B1%E8%AF%84/"/>
     
   </entry>
   
   <entry>
     <title>一个牛逼的一千种吹法(罗生门影评)</title>
-    <link href="http://yoursite.com/2016/05/08/%E4%B8%80%E4%B8%AA%E7%89%9B%E9%80%BC%E7%9A%84%E4%B8%80%E5%8D%83%E7%A7%8D%E5%90%B9%E6%B3%95-%E7%BD%97%E7%94%9F%E9%97%A8%E5%BD%B1%E8%AF%84/"/>
-    <id>http://yoursite.com/2016/05/08/一个牛逼的一千种吹法-罗生门影评/</id>
+    <link href="https://rubbishquan.github.io/2016/05/08/%E4%B8%80%E4%B8%AA%E7%89%9B%E9%80%BC%E7%9A%84%E4%B8%80%E5%8D%83%E7%A7%8D%E5%90%B9%E6%B3%95-%E7%BD%97%E7%94%9F%E9%97%A8%E5%BD%B1%E8%AF%84/"/>
+    <id>https://rubbishquan.github.io/2016/05/08/一个牛逼的一千种吹法-罗生门影评/</id>
     <published>2016-05-08T14:32:49.000Z</published>
     <updated>2016-10-12T04:34:57.000Z</updated>
     
@@ -229,14 +229,14 @@ You understand?&#x201D;
     </summary>
     
     
-      <category term="影评" scheme="http://yoursite.com/tags/%E5%BD%B1%E8%AF%84/"/>
+      <category term="影评" scheme="https://rubbishquan.github.io/tags/%E5%BD%B1%E8%AF%84/"/>
     
   </entry>
   
   <entry>
     <title>在这间屋子里我要做一个女人，不做党员同志。(1984尚未写完的书评)</title>
-    <link href="http://yoursite.com/2015/03/07/%E5%9C%A8%E8%BF%99%E9%97%B4%E5%B1%8B%E5%AD%90%E9%87%8C%E6%88%91%E8%A6%81%E5%81%9A%E4%B8%80%E4%B8%AA%E5%A5%B3%E4%BA%BA%EF%BC%8C%E4%B8%8D%E5%81%9A%E5%85%9A%E5%91%98%E5%90%8C%E5%BF%97%E3%80%82-1984%E5%B0%9A%E6%9C%AA%E5%86%99%E5%AE%8C%E7%9A%84%E4%B9%A6%E8%AF%84/"/>
-    <id>http://yoursite.com/2015/03/07/在这间屋子里我要做一个女人，不做党员同志。-1984尚未写完的书评/</id>
+    <link href="https://rubbishquan.github.io/2015/03/07/%E5%9C%A8%E8%BF%99%E9%97%B4%E5%B1%8B%E5%AD%90%E9%87%8C%E6%88%91%E8%A6%81%E5%81%9A%E4%B8%80%E4%B8%AA%E5%A5%B3%E4%BA%BA%EF%BC%8C%E4%B8%8D%E5%81%9A%E5%85%9A%E5%91%98%E5%90%8C%E5%BF%97%E3%80%82-1984%E5%B0%9A%E6%9C%AA%E5%86%99%E5%AE%8C%E7%9A%84%E4%B9%A6%E8%AF%84/"/>
+    <id>https://rubbishquan.github.io/2015/03/07/在这间屋子里我要做一个女人，不做党员同志。-1984尚未写完的书评/</id>
     <published>2015-03-07T02:59:56.000Z</published>
     <updated>2016-10-12T04:34:57.000Z</updated>
     
@@ -262,7 +262,7 @@ You understand?&#x201D;
     </summary>
     
     
-      <category term="书评" scheme="http://yoursite.com/tags/%E4%B9%A6%E8%AF%84/"/>
+      <category term="书评" scheme="https://rubbishquan.github.io/tags/%E4%B9%A6%E8%AF%84/"/>
     
   </entry>
   
