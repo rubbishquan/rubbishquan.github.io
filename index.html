@@ -258,6 +258,345 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/24/关于DOM/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-24T09:57:41+08:00" content="2016-12-24">
+              2016-12-24
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#&#x5173;&#x4E8E;Dom&#x7684;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;<br>Dom&#x662F;HTML/XML&#x7684;&#x4E00;&#x4E2A; API&#xFF0C;&#x63CF;&#x7ED8;&#x4E86;&#x4E00;&#x4E2A;&#x5C42;&#x6B21;&#x5316;&#x7684;&#x8282;&#x70B9;&#x6811;&#x3002;</p>
+<ul>
+<li><p>DOM1</p>
+<ul>
+<li>nodeType<ul>
+<li>Element 1<ul>
+<li>nodeNmae: &#x6807;&#x7B7E;&#x540D;</li>
+<li>&#x7279;&#x6027;<ul>
+<li>getAttribute(attributeName)</li>
+<li>setAttribute(name, value)</li>
+<li>removeAttribute</li>
+</ul>
+</li>
+<li>Attributes&#x5C5E;&#x6027;&#x5305;&#x542B;&#x4E8E;NodeLIst&#x7C7B;&#x4F3C;&#x7684;NamedNodeMap&#x5BF9;&#x8C61;,nodeName&#x662F;&#x7279;&#x6027;&#x540D;&#x79F0;&#xFF0C;nodeValue&#x662F;&#x7279;&#x6027;&#x503C;&#x3002;<ul>
+<li>getNamedItem(name)</li>
+<li>removeNamedItem(name)</li>
+<li>setNamedItem(node)</li>
+<li>item(pos)</li>
+</ul>
+</li>
+<li>createElement(tagName)</li>
+</ul>
+</li>
+<li>Attr 2<ul>
+<li>createAttribute(name)</li>
+</ul>
+</li>
+<li>Text 3<ul>
+<li>nodeName #text</li>
+<li>nodeValue &#x5305;&#x542B;&#x6587;&#x672C;</li>
+<li>splitText(offset)</li>
+<li>createTextNode(data)</li>
+</ul>
+</li>
+<li>Document 9<ul>
+<li>nodeName: #document</li>
+<li>document.title</li>
+<li>document.url</li>
+<li>document.domain</li>
+<li>document.refferrer</li>
+<li>getElementById //&#x5C06;&#x53D6;&#x5F97;&#x7C7B;&#x4F3C;nodeList&#x7684;HTMLCollection&#x5BF9;&#x8C61;</li>
+<li>getElementsByTagName //&#x53EF;&#x4F7F;&#x7528;&#x4F4D;&#x7F6E;&#x6216;&#x540D;&#x5B57;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x9879;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x8282;&#x70B9;&#x5173;&#x7CFB;</p>
+<ul>
+<li>&#x6BCF;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x6709;childNodes&#x5C5E;&#x6027;&#xFF0C;&#x4FDD;&#x5B58;nodeList&#x7C7B;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x3002;<br>&#x5C06;nodeList&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x7EC4;&#xFF1A;var Arr = Array.prototype.slice.call(NodeList, 0)</li>
+<li>&#x6BCF;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x6709;parentNode&#x5C5E;&#x6027;&#xFF0C;chileNodes&#x5217;&#x8868;&#x91CC;&#x7684;&#x6240;&#x6709;&#x8282;&#x70B9;&#x90FD;&#x6307;&#x5411;&#x540C;&#x4E00;&#x4E2A;parentNode&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;previousSibling&#x548C;nextSibling &#x8BBF;&#x95EE;&#x5B83;&#x4EEC;&#x7684;&#x540C;&#x80DE;&#x8282;&#x70B9;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5305;&#x542B;&#x53E6;&#x4E00;&#x4E2A;&#x8282;&#x70B9;,hasChildNodes&#x5C06;&#x8FD4;&#x56DE;true.</li>
+<li>ownerDocument&#x5C06;&#x653E;&#x56DE;Document&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x64CD;&#x4F5C;&#x8282;&#x70B9;(&#x64CD;&#x4F5C;&#x7684;&#x662F;parenNode&#x7684;&#x5B50;&#x8282;&#x70B9;)</p>
+<ol>
+<li>appendChild(appendChild) &#x5411;childNodes&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x8282;&#x70B9;&#x5DF2;&#x5B58;&#x5728;&#xFF0C;&#x5C06;&#x79FB;&#x5230;&#x672B;&#x5C3E;</li>
+<li>insertBefore(newElement, referenceElement) &#x5411;childNodes&#x7684;&#x7279;&#x5B9A;&#x4F4D;&#x7F6E;&#x6DFB;&#x52A0;&#x8282;&#x70B9;&#x3002;<ul>
+<li>someNode.insertBefore(newNode, null) //&#x6210;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</li>
+<li>someNode.insertBefore(newNode, someNode.firstNode) //&#x6210;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</li>
+</ul>
+</li>
+<li>replaceChild <ul>
+<li>var returnedNode = someNode.repalceChild(newNode, someNode.firstChild) //&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x88AB;&#x66FF;&#x6362;</li>
+</ul>
+</li>
+<li>removeChild(child)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Dom&#x6269;&#x5C55;<ul>
+<li>Selectors APILevel 1 <ul>
+<li>querySelector //&#x53D6;&#x5F97;&#x5339;&#x914D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</li>
+<li>querySelectorAll //&#x8FD4;&#x56DE;NodeList&#x5B9E;&#x4F8B;</li>
+</ul>
+</li>
+<li>HTML5<ul>
+<li>getElementsByClassName //&#x8FD4;&#x56DE;NOdeLIst&#x5B9E;&#x4F8B;</li>
+<li>classLIst<ul>
+<li>add</li>
+<li>contains</li>
+<li>remove</li>
+<li>toggle</li>
+</ul>
+</li>
+<li>focus<ul>
+<li>activeElement</li>
+<li>hasfoces</li>
+</ul>
+</li>
+<li>HTMLDocument<ul>
+<li>readyState</li>
+<li>compatMode</li>
+<li>head</li>
+<li>charset</li>
+<li>dataset DOMStringMap&#x5B9E;&#x4F8B;</li>
+<li>innerHTML</li>
+<li>outerHTML</li>
+<li>insertAdjacentHTML</li>
+</ul>
+</li>
+<li>&#x4E13;&#x7528;&#x6269;&#x5C55;<ul>
+<li>documentMode //&lt;meta http-equiv=&#x201D;X-UA-Compatible&#x201D; content=&#x201D;IE=IEVersion&#x201D;</li>
+<li>children</li>
+<li>contains</li>
+<li>innerText</li>
+<li>outerText</li>
+</ul>
+</li>
+<li>scrollIntoView()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Dom2&amp;Dom3<ul>
+<li>style<ul>
+<li>cssText(&#x53EF;&#x5199;)</li>
+</ul>
+</li>
+<li>document.defaultView.getComputedStyle()</li>
+<li>document.styleSheets<ul>
+<li>disabled</li>
+<li>href</li>
+<li>cssRule<ul>
+<li>cssText(&#x53EA;&#x8BFB;)</li>
+<li>selectorText</li>
+<li>style</li>
+</ul>
+</li>
+<li>insertRule</li>
+<li>deleteRule</li>
+</ul>
+</li>
+<li>getBoundingClientRect()</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/10/匿名函数调用/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-10T23:24:26+08:00" content="2016-12-10">
+              2016-12-10
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##&#x533F;&#x540D;&#x51FD;&#x6570;&#x8C03;&#x7528;</p>
+<ul>
+<li>&#x533F;&#x540D;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x6CD5;(1)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(function() {</div><div class="line">	// ...</div><div class="line">}())</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x533F;&#x540D;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x6CD5;(2)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(function() {</div><div class="line">	// ...</div><div class="line">})()</div></pre></td></tr></table></figure>
+<p>&#x4F8B;1&#x4E0E;&#x4F8B;2&#x7528;&#x4E8E;&#x201C;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x5E76;&#x8FD4;&#x56DE;&#x503C;&#x201D;&#xFF0C;&#x4E24;&#x79CD;&#x8868;&#x8FBE;&#x5F0F;&#x90FD;&#x6709;&#x4E09;&#x5BF9;&#x62EC;&#x53F7;&#xFF0C;&#x4F46;&#x542B;&#x4E49;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x4F8B;1&#x662F;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x4F8B;2&#x662F;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x81EA;&#x8EAB;</p>
+<p>&#x867D;&#x7136;&#x57FA;&#x672C;&#x4E00;&#x81F4;&#xFF0C;&#x4F46;&#x4E8B;&#x5B9E;&#x4E0A;&#x4E24;&#x79CD;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x8FD0;&#x7B97;&#x8FC7;&#x7A0B;&#x7565;&#x6709;&#x4E0D;&#x540C;&#xFF1A;&#x4F8B;1&#x4E2D;&#x662F;&#x7528;&#x6700;&#x5916;&#x9762;&#x7684;&#x4E00;&#x5C42;&#x62EC;&#x53F7;&#x5F3A;&#x5236;&#x8FD0;&#x7B97;&#xFF0C;&#x4F7F;&#x5F97;&#x51FD;&#x6570;&#x5F97;&#x4EE5;&#x6267;&#x884C;&#x3002;&#x4F8B;2&#x4E2D;&#x6700;&#x5916;&#x9762;&#x7684;&#x4E00;&#x5C42;&#x62EC;&#x53F7;&#x662F;&#x4F7F;&#x51FD;&#x6570;&#x58F0;&#x660E;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x81EA;&#x8EAB;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8FD0;&#x7B97;&#x7B26;&#x201C;()&#x201D;&#xFF0C;&#x5728;&#x4F8B;1&#x4E2D;&#x4F5C;&#x7528;&#x4E8E;&#x533F;&#x540D;&#x51FD;&#x6570;&#x81EA;&#x8EAB;&#xFF0C;&#x5728;&#x4F8B;2&#x4E2D;&#x4F5C;&#x7528;&#x4E8E;&#x4E00;&#x4E2A;&#x8FD0;&#x7B97;&#x7684;&#x7ED3;&#x679C;&#x503C;&#x3002;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/21/永恒的终结/" itemprop="url">
                   终极奥秘(读永恒的终结有感)
                 </a>
@@ -1058,7 +1397,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1123,7 +1462,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
