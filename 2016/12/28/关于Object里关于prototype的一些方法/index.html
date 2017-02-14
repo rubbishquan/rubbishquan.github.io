@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -104,15 +104,16 @@
 
 
 
-<meta name="description" content="pinker&apos;s blog | html | css | javascript | think">
-<meta property="og:type" content="website">
-<meta property="og:title" content="红辣椒">
-<meta property="og:url" content="https://rubbishquan.github.io/tags/vue/index.html">
+<meta name="description" content="Object.defineProperty() &amp;#x4E00;&amp;#x4E2A;&amp;#x5BF9;&amp;#x8C61;&amp;#x4E0A;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x5C5E;&amp;#x6027;&amp;#xFF0C;&amp;#x6216;&amp;#x8005;&amp;#x4FEE;&amp;#x6539;&amp;#x4E00;&amp;#x4E2A;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B58;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Object里关于prototype的一些方法">
+<meta property="og:url" content="https://rubbishquan.github.io/2016/12/28/关于Object里关于prototype的一些方法/index.html">
 <meta property="og:site_name" content="红辣椒">
-<meta property="og:description" content="pinker&apos;s blog | html | css | javascript | think">
+<meta property="og:description" content="Object.defineProperty() &amp;#x4E00;&amp;#x4E2A;&amp;#x5BF9;&amp;#x8C61;&amp;#x4E0A;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x5C5E;&amp;#x6027;&amp;#xFF0C;&amp;#x6216;&amp;#x8005;&amp;#x4FEE;&amp;#x6539;&amp;#x4E00;&amp;#x4E2A;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B58;">
+<meta property="og:updated_time" content="2017-02-14T01:02:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="红辣椒">
-<meta name="twitter:description" content="pinker&apos;s blog | html | css | javascript | think">
+<meta name="twitter:title" content="关于Object里关于prototype的一些方法">
+<meta name="twitter:description" content="Object.defineProperty() &amp;#x4E00;&amp;#x4E2A;&amp;#x5BF9;&amp;#x8C61;&amp;#x4E0A;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x5C5E;&amp;#x6027;&amp;#xFF0C;&amp;#x6216;&amp;#x8005;&amp;#x4FEE;&amp;#x6539;&amp;#x4E00;&amp;#x4E2A;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B58;">
 
 
 
@@ -133,9 +134,9 @@
 
 
 
-  <link rel="canonical" href="https://rubbishquan.github.io/tags/vue/"/>
+  <link rel="canonical" href="https://rubbishquan.github.io/2016/12/28/关于Object里关于prototype的一些方法/"/>
 
-  <title> 标签: vue | 红辣椒 </title>
+  <title> 关于Object里关于prototype的一些方法 | 红辣椒 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -156,7 +157,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,46 +235,142 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        vue
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                关于Object里关于prototype的一些方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-28T19:55:09+08:00" content="2016-12-28">
+              2016-12-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>Object.defineProperty() &#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0A;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x65B0;&#x5C5E;&#x6027;&#xFF0C;&#x6216;&#x8005;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x5C5E;&#x6027;&#xFF0C; &#x5E76;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;&#x8D4B;&#x503C;&#x540E;&#x4E0D;&#x53EF;&#x6539;&#x53D8;&#x3002;<br>    <a id="more"></a></p>
+<ul>
+<li>Object.getPrototypeOf() &#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;</li>
+<li>Object.setPrototypeOf(&#x73B0;&#x6709;&#x5BF9;&#x8C61;&#xFF0C; &#x539F;&#x578B;&#x5BF9;&#x8C61;) &#x4E3A;&#x73B0;&#x6709;&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x539F;&#x578B;</li>
+<li><p>Object.getOwnPropertyNames() &#x8FD4;&#x56DE;&#x672C;&#x8EAB;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x7684;&#x952E;&#x540D;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x7EE7;&#x627F;&#x5C5E;&#x6027;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function F() {}</div><div class="line">var f = new F()</div><div class="line">//&#x7B49;&#x4E8E;</div><div class="line">var f = Object.setPrototypeOf({}, F.prototype)</div><div class="line">F.call(f)</div></pre></td></tr></table></figure>
+</li>
+<li><p>Objcet.prototype.hasOwnProperty &#x5224;&#x65AD;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x5728;&#x539F;&#x578B;&#x4E0A;&#x8FD8;&#x662F;&#x81EA;&#x8EAB;&#x4E0A;</p>
+</li>
+<li><p>bject.prototype.isPrototypeOf() &#x5B9E;&#x4F8B;&#x7684;isPrototypeOf&#x65B9;&#x6CD5;&#x6765;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x662F;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var f1 = {}</div><div class="line">var f2 = Object.create(f1)</div><div class="line">var f3 = Object.create(f2)</div><div class="line">f2.isPrototypeOf(f1)</div><div class="line">f3.isPrototypeOf(f2)</div></pre></td></tr></table></figure>
+</li>
+<li><p>Object.prototype.<strong>proto</strong> &#x53EF;&#x4EE5;&#x6539;&#x5199;&#x67D0;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;&#x5BF9;&#x8C61;<br>//&#x81EA;&#x8EAB;</p>
+</li>
+<li>Objcet.keys &#x8FD4;&#x56DE;&#x672C;&#x8EAB;&#x53EF;&#x4EE5;&#x679A;&#x4E3E;&#x7684;&#x5C5E;&#x6027;</li>
+<li>for&#x2026;in &#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x6709;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x4E0D;&#x533A;&#x5206;&#x81EA;&#x8EAB;&#x5C5E;&#x6027;&#x8FD8;&#x662F;&#x7EE7;&#x627F;&#x5C5E;&#x6027;<br>&#x5728;for&#x2026;in&#x5FAA;&#x73AF;&#x4E2D;&#x83B7;&#x5F97;&#x81EA;&#x8EAB;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#xFF0C;&#x7528;hasOwnproerty&#x65B9;&#x6CD5;</li>
+</ul>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/08/10/my-first-page/" itemprop="url">
-              
-                <span itemprop="name">my first page</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-10T22:10:09+08:00"
-              content="2016-08-10" >
-          08-10
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/26/高程3中关于DOM章节的整理/" rel="next" title="高程3中关于DOM章节的整理">
+                <i class="fa fa-chevron-left"></i> 高程3中关于DOM章节的整理
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/30/闭包初探/" rel="prev" title="闭包初探">
+                闭包初探 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -281,6 +378,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -300,8 +401,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpeg"
@@ -312,7 +422,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -322,7 +432,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -362,6 +472,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -465,6 +586,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
