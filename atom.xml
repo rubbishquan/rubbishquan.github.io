@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://rubbishquan.github.io/"/>
-  <updated>2016-10-12T04:34:57.000Z</updated>
+  <updated>2017-02-14T01:42:44.000Z</updated>
   <id>https://rubbishquan.github.io/</id>
   
   <author>
@@ -14,6 +14,358 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>var bind = Function.prototype.call.bind(Function.prototype.bind)</title>
+    <link href="https://rubbishquan.github.io/2017/02/14/var%20bind%20=%20Function.prototype.call.bind(Function.prototype.bind)/"/>
+    <id>https://rubbishquan.github.io/2017/02/14/var bind = Function.prototype.call.bind(Function.prototype.bind)/</id>
+    <published>2017-02-14T01:40:25.000Z</published>
+    <updated>2017-02-14T01:42:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x5982;&#x679C;&#x4EC5;&#x4EC5;&#x5355;&#x7EAF;&#x8FD9;&#x6837;&#x5199;<br>var slice = Function.prototype.slice<br>&#x4F1A;&#x8FD0;&#x884C;&#x9519;&#x8BEF;<br>slice([123],1)<br>VM449:1 Uncaught TypeError: Array.prototype.slice called on null or undefine<br><a id="more"></a><br>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;Function.prototype&#x4E2D;&#x4E3A;slice&#x65B9;&#x6CD5;&#x5236;&#x5B9A;&#x4E86;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x5355;&#x7EAF;&#x7684;&#x8D4B;&#x503C;&#x7ED9;&#x53D8;&#x91CF;&#x540E;&#xFF0C;slice&#x7684;&#x5C31;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x4E0A;&#x4E0B;&#x6587;&#x3002;<br>&#x4F7F;&#x7528;call/apply&#x5C31;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x6B63;&#x786E;&#x7684;&#x503C;<br>slice.call([1, 2, 3], 1)<br>[2, 3]<br>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x4E3A;slice&#x6307;&#x5B9A;&#x4E86;&#x4E0A;&#x4E0B;&#x6587;<br>&#x628A;call&#x7ED1;&#x5B9A;&#x5230;slice&#x4E0A;<br>var slice = Function.prototype.call.bind(Array.prototype.slice)<br>slice([1,2,3],1)<br>[2, 3]<br>&#x5BF9;bind&#x672C;&#x8EAB;&#x7ED1;&#x5B9A;call<br>var bind = Function.prototype.call.bind(Function.prototype.bind);<br>&#x7ED1;&#x5B9A;call&#x540E;&#xFF0C;bind&#x5C31;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x201D;bind(func, context)&#x201D;&#x8FD9;&#x6837;&#x7684;&#x5F62;&#x5F0F;&#x4F7F;&#x7528;&#x4E86;&#x3002;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x5982;&amp;#x679C;&amp;#x4EC5;&amp;#x4EC5;&amp;#x5355;&amp;#x7EAF;&amp;#x8FD9;&amp;#x6837;&amp;#x5199;&lt;br&gt;var slice = Function.prototype.slice&lt;br&gt;&amp;#x4F1A;&amp;#x8FD0;&amp;#x884C;&amp;#x9519;&amp;#x8BEF;&lt;br&gt;slice([123],1)&lt;br&gt;VM449:1 Uncaught TypeError: Array.prototype.slice called on null or undefine&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://rubbishquan.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>slice、substr、substring区别</title>
+    <link href="https://rubbishquan.github.io/2017/01/10/slice%E3%80%81substr%E3%80%81substring%E5%8C%BA%E5%88%ABmd/"/>
+    <id>https://rubbishquan.github.io/2017/01/10/slice、substr、substring区别md/</id>
+    <published>2017-01-10T12:20:05.000Z</published>
+    <updated>2017-02-14T01:08:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>slice()&#x548C;subsring()&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x540E;&#x9762;&#x7684;&#x4F4D;&#x7F6E;<br>substr()&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x7684;&#x4E2A;&#x6570;<br>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;&#x4F5C;&#x4E3A;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;<br>    <a id="more"></a><br>&#x5982;&#x679C;&#x53C2;&#x6570;&#x662F;&#x8D1F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;</p>
+<ul>
+<li>slice&#x5C06;&#x4F20;&#x5165;&#x7684;&#x8D1F;&#x503C;&#x4E8E;&#x4E0E;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;&#x76F8;&#x52A0;</li>
+<li>substr&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;&#x52A0;&#x4E0A;&#x4F20;&#x5165;&#x7684;&#x8D1F;&#x503C;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;0</li>
+<li>substring&#x5C06;&#x6240;&#x6709;&#x7684;&#x8D1F;&#x503C;&#x90FD;&#x8F6C;&#x6362;&#x4E3A;0</li>
+</ul>
+<p>//&#x4F8B;&#x5B50;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var stringValue = &quot;hello world&quot;;</div><div class="line"></div><div class="line">alert(stringValue.slice(-3));</div><div class="line">alert(stringValue.substring(-3));</div><div class="line">alert(stringValue.substr(-3));</div><div class="line">alert(stringValue.slice(3, -4));</div><div class="line">alert(stringValue.substring(3, -4));</div><div class="line">alert(stringValue.substr(3, -4));</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">//&quot;rld&quot; //&quot;hello world&quot; //&quot;rld&quot;</div><div class="line">//&quot;lo w&quot; //&quot;hel&quot; //&quot;&quot;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;slice()&amp;#x548C;subsring()&amp;#x7684;&amp;#x7B2C;&amp;#x4E8C;&amp;#x4E2A;&amp;#x53C2;&amp;#x6570;&amp;#x662F;&amp;#x5B50;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x4E2D;&amp;#x6700;&amp;#x540E;&amp;#x4E00;&amp;#x4E2A;&amp;#x5B57;&amp;#x7B26;&amp;#x540E;&amp;#x9762;&amp;#x7684;&amp;#x4F4D;&amp;#x7F6E;&lt;br&gt;substr()&amp;#x7684;&amp;#x7B2C;&amp;#x4E8C;&amp;#x4E2A;&amp;#x53C2;&amp;#x6570;&amp;#x662F;&amp;#x8FD4;&amp;#x56DE;&amp;#x5B57;&amp;#x7B26;&amp;#x7684;&amp;#x4E2A;&amp;#x6570;&lt;br&gt;&amp;#x5982;&amp;#x679C;&amp;#x6CA1;&amp;#x6709;&amp;#x7B2C;&amp;#x4E8C;&amp;#x4E2A;&amp;#x53C2;&amp;#x6570;&amp;#x5C06;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x7684;&amp;#x957F;&amp;#x5EA6;&amp;#x4F5C;&amp;#x4E3A;&amp;#x7ED3;&amp;#x675F;&amp;#x4F4D;&amp;#x7F6E;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://rubbishquan.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>影响到this的取值的几种情况</title>
+    <link href="https://rubbishquan.github.io/2017/01/01/%E5%BD%B1%E5%93%8D%E5%88%B0this%E7%9A%84%E5%8F%96%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5/"/>
+    <id>https://rubbishquan.github.io/2017/01/01/影响到this的取值的几种情况/</id>
+    <published>2017-01-01T09:44:25.000Z</published>
+    <updated>2017-02-14T01:30:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Javascript&#x7684;4&#x79CD;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#xFF1A;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x3001;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x3001;&#x6784;&#x9020;&#x5668;&#x8C03;&#x7528;&#x3001;call/apply&#x8C03;&#x7528;&#xFF1B;</p>
+<p>&#x8FD9;&#x56DB;&#x79CD;&#x6A21;&#x5F0F;&#x53EF;&#x80FD;&#x5F71;&#x54CD;&#x5230;this&#x7684;&#x53D6;&#x503C;&#xFF1B;<br><a id="more"></a></p>
+<ul>
+<li><p>&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#xFF1A;&#x5F53;&#x51FD;&#x6570;&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x5B83;&#x79F0;&#x4E3A;&#x65B9;&#x6CD5;&#x3002;&#x5F53;&#x65B9;&#x6CD5;&#x88AB;&#x8C03;&#x7528;&#xFF0C;this&#x7ED1;&#x5B9A;&#x5230;&#x8BE5;&#x5BF9;&#x8C61;&#x3002;&#x901A;&#x8FC7;this&#x53EF;&#x53D6;&#x5F97;&#x5B83;&#x4EEC;&#x6240;&#x5C5E;&#x5BF9;&#x8C61;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x65B9;&#x6CD5;&#x79F0;&#x4E3A;&#x516C;&#x5171;&#x65B9;&#x6CD5;&#x3002;</p>
+</li>
+<li><p>&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF1A;&#x5F53;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5E76;&#x975E;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5F53;&#x4ED6;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x79F0;&#x4E3A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x3002;&#x5F53;&#x51FD;&#x6570;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#xFF0C;this&#x7ED1;&#x5B9A;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x3002;&#x5F53;&#x5185;&#x90E8;&#x51FD;&#x6570;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#xFF0C;this&#x4E0D;&#x80FD;&#x7ED1;&#x5B9A;&#x5230;&#x5916;&#x90E8;&#x51FD;&#x6570;&#x7684;this&#x53D8;&#x91CF;&#x3002;&#x627E;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x6BD4;&#x5982;that&#xFF0C;&#x5E76;&#x7ED9;&#x5B83;&#x8D4B;&#x503C;&#x4E3A;this&#x540E;&#xFF0C;&#x5185;&#x90E8;&#x51FD;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x8BBF;&#x95EE;&#x5230;&#x5916;&#x90E8;&#x53D8;&#x91CF;&#x7684;this&#x3002;</p>
+</li>
+<li><p>&#x6784;&#x9020;&#x5668;&#x8C03;&#x7528;&#xFF1A;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x524D;&#x9762;&#x5E26;&#x4E0A;&#x201D;new&#x201D;&#x6765;&#x8C03;&#x7528;&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#x5230;&#x8BE5;&#x51FD;&#x6570;&#x7684;prototype&#x6210;&#x5458;&#x7684;&#x65B0;&#x5BF9;&#x8C61;&#xFF0C;&#x540C;&#x65F6;this&#x4F1A;&#x7ED1;&#x5B9A;&#x5230;&#x65B0;&#x5BF9;&#x8C61;&#x4E0A;&#x3002;&#x201D;new&#x201D;&#x4E5F;&#x4F1A;&#x6539;&#x53D8;return&#x8BED;&#x53E5;&#x7684;&#x884C;&#x4E3A;&#x3002;</p>
+</li>
+<li><p>call/apply&#x8C03;&#x7528;&#xFF1A;Javascript&#x662F;&#x51FD;&#x6570;&#x5F0F;&#x7684;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BED;&#x8A00;&#xFF0C;&#x6240;&#x4EE5;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x62E5;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;Function.apply(this,[])&#xFF0C;&#x628A;Function&#x91CC;&#x7684;this&#x7ED1;&#x5B9A;&#x5230;&#x53C2;&#x6570;1&#x7684;this&#x540E;&#xFF0C;&#x53C2;&#x6570;1&#x7684;&#x90A3;&#x4E2A;&#x5BF9;&#x8C61;&#x62E5;&#x6709;Function&#x91CC;&#x7684;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;&#x3002;</p>
+</li>
+</ul>
+<p>&#x591A;&#x5C42;this<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var o = {</div><div class="line">     f1: function() {</div><div class="line">          console.log(this);</div><div class="line">          var f2 = function() {</div><div class="line">               console.log(this)</div><div class="line">           }()</div><div class="line">     }</div><div class="line">}</div><div class="line">o.f1()</div><div class="line">//&#x7B2C;&#x4E00;&#x5C42;&#x6307;&#x5411;O&#x5BF9;&#x8C61;&#xFF0C;&#x7B2C;&#x4E8C;&#x5C42;&#x6307;&#x5411;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x3002;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var temp = function() {</div><div class="line">      console.log(this)</div><div class="line">}</div><div class="line">var o  = {</div><div class="line">     f1: function() {</div><div class="line">          console.log(this)</div><div class="line">          var f2 = temp()</div><div class="line">     }</div><div class="line"> }</div><div class="line">forEach&#x65B9;&#x6CD5;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E2D;&#x7684;this&#x6307;&#x5411;&#x5168;&#x5C40;&#x5BF9;&#x8C61;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Javascript&amp;#x7684;4&amp;#x79CD;&amp;#x8C03;&amp;#x7528;&amp;#x6A21;&amp;#x5F0F;&amp;#xFF1A;&amp;#x65B9;&amp;#x6CD5;&amp;#x8C03;&amp;#x7528;&amp;#x3001;&amp;#x51FD;&amp;#x6570;&amp;#x8C03;&amp;#x7528;&amp;#x3001;&amp;#x6784;&amp;#x9020;&amp;#x5668;&amp;#x8C03;&amp;#x7528;&amp;#x3001;call/apply&amp;#x8C03;&amp;#x7528;&amp;#xFF1B;&lt;/p&gt;
+&lt;p&gt;&amp;#x8FD9;&amp;#x56DB;&amp;#x79CD;&amp;#x6A21;&amp;#x5F0F;&amp;#x53EF;&amp;#x80FD;&amp;#x5F71;&amp;#x54CD;&amp;#x5230;this&amp;#x7684;&amp;#x53D6;&amp;#x503C;&amp;#xFF1B;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://rubbishquan.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>闭包初探</title>
+    <link href="https://rubbishquan.github.io/2016/12/30/%E9%97%AD%E5%8C%85%E5%88%9D%E6%8E%A2/"/>
+    <id>https://rubbishquan.github.io/2016/12/30/闭包初探/</id>
+    <published>2016-12-30T04:22:05.000Z</published>
+    <updated>2017-02-13T09:48:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>  &#x4F5C;&#x7528;&#x57DF;&#x7684;&#x597D;&#x5904;&#x662F;&#x5185;&#x90E8;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;&#x5B9A;&#x4E49;&#x4ED6;&#x4EEC;&#x7684;&#x5916;&#x90E8;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x548C;&#x53D8;&#x91CF;(&#x9664;&#x4E86;this&#x548C;argument)&#x3002;</p>
+<p>  &#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x95ED;&#x5305;&#x5C31;&#x662F;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x4FDD;&#x5B58;&#x4E86;&#x4E00;&#x4EFD;&#x5B83;&#x4ECE;&#x4E0A;&#x4E00;&#x7EA7;&#x51FD;&#x6570;&#x6216;&#x4F5C;&#x7528;&#x57DF;&#x53D6;&#x5F97;&#x7684;&#x53D8;&#x91CF;&#xFF08;&#x952E;&#x503C;&#x5BF9;&#xFF09;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x952E;&#x503C;&#x5BF9;&#x662F;&#x4E0D;&#x4F1A;&#x968F;&#x4E0A;&#x4E00;&#x7EA7;&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x800C;&#x9500;&#x6BC1;&#x3002;</p>
+<p>  &#x53D8;&#x91CF;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x6709;&#x4E24;&#x79CD;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x5C40;&#x90E8;&#x4F5C;&#x7528;&#x57DF;&#x3002;<br>    <a id="more"></a><br>  &#x51FD;&#x6570;&#x5185;&#x90E8;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x81EA;&#x5DF1;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x4F46;&#x662F;&#x51FD;&#x6570;&#x5916;&#x90E8;&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;&#x51FD;&#x6570;&#x5185;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x3002;</p>
+<p>  &#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x8BBF;&#x95EE;&#x5230;&#x51FD;&#x6570;&#x5185;&#x5C40;&#x90E8;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5728;&#x51FD;&#x6570;&#x7684;&#x5185;&#x90E8;&#x518D;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">  function f1() {</div><div class="line">     var i = 1</div><div class="line">     function f2() {</div><div class="line">       console.log(i) //1</div><div class="line">     }</div><div class="line">     return f2</div><div class="line">}</div><div class="line">var result = f1()</div><div class="line">result()  //1</div></pre></td></tr></table></figure></p>
+<p>&#x95ED;&#x5305;&#x6700;&#x5927;&#x7684;&#x7279;&#x70B9;&#x5C31;&#x662F;&#x80FD;&#x8BB0;&#x4F4F;&#x2019;&#x5B83;&#x7684;&#x8BDE;&#x751F;&#x73AF;&#x5883;&#x2018;&#xFF0C;f2&#x8BB0;&#x4F4F;&#x4E86;f1&#x7684;&#x2019;&#x8BDE;&#x751F;&#x73AF;&#x5883;&#x2018;&#x6240;&#x4EE5;&#x4ECE;f2&#x53EF;&#x4EE5;&#x5F97;&#x5230;f1&#x7684;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x95ED;&#x5305;&#x7684;&#x6700;&#x5927;&#x7528;&#x5904;&#x6709;&#x4E24;&#x4E2A;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x5C31;&#x662F;&#x8BA9;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x59CB;&#x7EC8;&#x4FDD;&#x6301;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x5373;&#x95ED;&#x5305;&#x53EF;&#x4EE5;&#x4F7F;&#x5F97;&#x5B83;&#x8BDE;&#x751F;&#x73AF;&#x5883;&#x4E00;&#x76F4;&#x5B58;&#x5728;&#x3002;&#x8BF7;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x95ED;&#x5305;&#x4F7F;&#x5F97;&#x5185;&#x90E8;&#x53D8;&#x91CF;&#x8BB0;&#x4F4F;&#x4E0A;&#x4E00;&#x6B21;&#x8C03;&#x7528;&#x65F6;&#x7684;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function Increment(start) {</div><div class="line">  return function () {</div><div class="line">  return start++;</div><div class="line">  };</div><div class="line">}</div><div class="line">var inc = Increment(5);</div><div class="line">inc() // 5</div><div class="line">inc() // 6</div><div class="line">inc() // 7</div></pre></td></tr></table></figure></p>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;start&#x662F;&#x51FD;&#x6570;Increment&#x7684;&#x5185;&#x90E8;&#x53D8;&#x91CF;&#x3002;&#x901A;&#x8FC7;&#x95ED;&#x5305;&#xFF0C;start&#x7684;&#x72B6;&#x6001;&#x88AB;&#x4FDD;&#x7559;&#x4E86;&#xFF0C;&#x6BCF;&#x4E00;&#x6B21;&#x8C03;&#x7528;&#x90FD;&#x662F;&#x5728;&#x4E0A;&#x4E00;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x3002;&#x4ECE;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x95ED;&#x5305;inc&#x4F7F;&#x5F97;&#x51FD;&#x6570;Increment&#x7684;&#x5185;&#x90E8;&#x73AF;&#x5883;&#xFF0C;&#x4E00;&#x76F4;&#x5B58;&#x5728;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x95ED;&#x5305;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x8FD9;&#x6837;&#x5462;&#xFF1F;&#x539F;&#x56E0;&#x5C31;&#x5728;&#x4E8E;inc&#x59CB;&#x7EC8;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x800C;inc&#x7684;&#x5B58;&#x5728;&#x4F9D;&#x8D56;&#x4E8E;Incrementor&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x59CB;&#x7EC8;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x4E0D;&#x4F1A;&#x5728;&#x8C03;&#x7528;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;&#x56DE;&#x6536;&#x3002;</p>
+<p>&#x95ED;&#x5305;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x7528;&#x5904;&#xFF0C;&#x662F;&#x5C01;&#x88C5;&#x5BF9;&#x8C61;&#x7684;&#x79C1;&#x6709;&#x5C5E;&#x6027;&#x548C;&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x3002;<br>&#x6211;&#x4EEC;&#x6784;&#x9020;&#x4E00;&#x4E2A;object&#x5BF9;&#x8C61;&#xFF0C; &#x5B83;&#x62E5;&#x6709;&#x4E00;&#x4E2A;value&#x5C5E;&#x6027;&#xFF0C;&#x5B83;&#x5BF9;&#x4E8E;Increment&#x548C;getValue&#x65B9;&#x6CD5;&#x603B;&#x662F;&#x53EF;&#x7528;&#x7684;&#xFF0C;&#x4F46;&#x4ED6;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x51FD;&#x6570;&#x5374;&#x662F;&#x4E0D;&#x53EF;&#x89C1;&#x7684;&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"> var object = (function() {</div><div class="line">  var value = 0</div><div class="line">  return {</div><div class="line">    increment: function(inc) {</div><div class="line">      value += typeof inc === &apos;number&apos; ? inc : 1</div><div class="line">    },</div><div class="line">    getValue: function() {</div><div class="line">      return value</div><div class="line">    }</div><div class="line">  }</div><div class="line">}())</div></pre></td></tr></table></figure></p>
+<p>//&#x6CE8;&#x610F;&#x6700;&#x540E;&#x4E00;&#x884C;&#x7684;&#x201C;()&#x201D;&#xFF0C;&#x8FD9;&#x79CD;&#x8C03;&#x7528;&#x53EB;&#x4F5C;&#x201D;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;IIFE)&#x201D;&#xFF0C;&#x4EE5;&#x540E;&#x89E3;&#x91CA;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x5E76;&#x6CA1;&#x6709;&#x628A;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8D4B;&#x503C;&#x7ED9;myObject&#xFF0C;&#x662F;&#x628A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x540E;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x8D4B;&#x7ED9;&#x5B83;&#x3002;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;  &amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#x7684;&amp;#x597D;&amp;#x5904;&amp;#x662F;&amp;#x5185;&amp;#x90E8;&amp;#x51FD;&amp;#x6570;&amp;#x53EF;&amp;#x4EE5;&amp;#x8BBF;&amp;#x95EE;&amp;#x5230;&amp;#x5B9A;&amp;#x4E49;&amp;#x4ED6;&amp;#x4EEC;&amp;#x7684;&amp;#x5916;&amp;#x90E8;&amp;#x51FD;&amp;#x6570;&amp;#x7684;&amp;#x53C2;&amp;#x6570;&amp;#x548C;&amp;#x53D8;&amp;#x91CF;(&amp;#x9664;&amp;#x4E86;this&amp;#x548C;argument)&amp;#x3002;&lt;/p&gt;
+&lt;p&gt;  &amp;#x7B80;&amp;#x5355;&amp;#x6765;&amp;#x8BF4;&amp;#xFF0C;&amp;#x95ED;&amp;#x5305;&amp;#x5C31;&amp;#x662F;&amp;#x5728;&amp;#x53E6;&amp;#x4E00;&amp;#x4E2A;&amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#x4E2D;&amp;#x4FDD;&amp;#x5B58;&amp;#x4E86;&amp;#x4E00;&amp;#x4EFD;&amp;#x5B83;&amp;#x4ECE;&amp;#x4E0A;&amp;#x4E00;&amp;#x7EA7;&amp;#x51FD;&amp;#x6570;&amp;#x6216;&amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#x53D6;&amp;#x5F97;&amp;#x7684;&amp;#x53D8;&amp;#x91CF;&amp;#xFF08;&amp;#x952E;&amp;#x503C;&amp;#x5BF9;&amp;#xFF09;&amp;#xFF0C;&amp;#x800C;&amp;#x8FD9;&amp;#x4E9B;&amp;#x952E;&amp;#x503C;&amp;#x5BF9;&amp;#x662F;&amp;#x4E0D;&amp;#x4F1A;&amp;#x968F;&amp;#x4E0A;&amp;#x4E00;&amp;#x7EA7;&amp;#x51FD;&amp;#x6570;&amp;#x7684;&amp;#x6267;&amp;#x884C;&amp;#x5B8C;&amp;#x6210;&amp;#x800C;&amp;#x9500;&amp;#x6BC1;&amp;#x3002;&lt;/p&gt;
+&lt;p&gt;  &amp;#x53D8;&amp;#x91CF;&amp;#x7684;&amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#x6709;&amp;#x4E24;&amp;#x79CD;&amp;#xFF0C;&amp;#x4E00;&amp;#x79CD;&amp;#x662F;&amp;#x5168;&amp;#x5C40;&amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#xFF0C;&amp;#x53E6;&amp;#x4E00;&amp;#x79CD;&amp;#x662F;&amp;#x5C40;&amp;#x90E8;&amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#x3002;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://rubbishquan.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Object里关于prototype的一些方法</title>
+    <link href="https://rubbishquan.github.io/2016/12/28/%E5%85%B3%E4%BA%8EObject%E9%87%8C%E5%85%B3%E4%BA%8Eprototype%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95/"/>
+    <id>https://rubbishquan.github.io/2016/12/28/关于Object里关于prototype的一些方法/</id>
+    <published>2016-12-28T11:55:09.000Z</published>
+    <updated>2017-02-14T01:02:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Object.defineProperty() &#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0A;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x65B0;&#x5C5E;&#x6027;&#xFF0C;&#x6216;&#x8005;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x5C5E;&#x6027;&#xFF0C; &#x5E76;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;&#x8D4B;&#x503C;&#x540E;&#x4E0D;&#x53EF;&#x6539;&#x53D8;&#x3002;<br>    <a id="more"></a></p>
+<ul>
+<li>Object.getPrototypeOf() &#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;</li>
+<li>Object.setPrototypeOf(&#x73B0;&#x6709;&#x5BF9;&#x8C61;&#xFF0C; &#x539F;&#x578B;&#x5BF9;&#x8C61;) &#x4E3A;&#x73B0;&#x6709;&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x539F;&#x578B;</li>
+<li><p>Object.getOwnPropertyNames() &#x8FD4;&#x56DE;&#x672C;&#x8EAB;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x7684;&#x952E;&#x540D;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x7EE7;&#x627F;&#x5C5E;&#x6027;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function F() {}</div><div class="line">var f = new F()</div><div class="line">//&#x7B49;&#x4E8E;</div><div class="line">var f = Object.setPrototypeOf({}, F.prototype)</div><div class="line">F.call(f)</div></pre></td></tr></table></figure>
+</li>
+<li><p>Objcet.prototype.hasOwnProperty &#x5224;&#x65AD;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x5728;&#x539F;&#x578B;&#x4E0A;&#x8FD8;&#x662F;&#x81EA;&#x8EAB;&#x4E0A;</p>
+</li>
+<li><p>bject.prototype.isPrototypeOf() &#x5B9E;&#x4F8B;&#x7684;isPrototypeOf&#x65B9;&#x6CD5;&#x6765;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x662F;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var f1 = {}</div><div class="line">var f2 = Object.create(f1)</div><div class="line">var f3 = Object.create(f2)</div><div class="line">f2.isPrototypeOf(f1)</div><div class="line">f3.isPrototypeOf(f2)</div></pre></td></tr></table></figure>
+</li>
+<li><p>Object.prototype.<strong>proto</strong> &#x53EF;&#x4EE5;&#x6539;&#x5199;&#x67D0;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;&#x5BF9;&#x8C61;<br>//&#x81EA;&#x8EAB;</p>
+</li>
+<li>Objcet.keys &#x8FD4;&#x56DE;&#x672C;&#x8EAB;&#x53EF;&#x4EE5;&#x679A;&#x4E3E;&#x7684;&#x5C5E;&#x6027;</li>
+<li>for&#x2026;in &#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x6709;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x4E0D;&#x533A;&#x5206;&#x81EA;&#x8EAB;&#x5C5E;&#x6027;&#x8FD8;&#x662F;&#x7EE7;&#x627F;&#x5C5E;&#x6027;<br>&#x5728;for&#x2026;in&#x5FAA;&#x73AF;&#x4E2D;&#x83B7;&#x5F97;&#x81EA;&#x8EAB;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#xFF0C;&#x7528;hasOwnproerty&#x65B9;&#x6CD5;</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Object.defineProperty() &amp;#x4E00;&amp;#x4E2A;&amp;#x5BF9;&amp;#x8C61;&amp;#x4E0A;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x5C5E;&amp;#x6027;&amp;#xFF0C;&amp;#x6216;&amp;#x8005;&amp;#x4FEE;&amp;#x6539;&amp;#x4E00;&amp;#x4E2A;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B58;&amp;#x5728;&amp;#x7684;&amp;#x5C5E;&amp;#x6027;&amp;#xFF0C; &amp;#x5E76;&amp;#x8FD4;&amp;#x56DE;&amp;#x8FD9;&amp;#x4E2A;&amp;#x5BF9;&amp;#x8C61;&amp;#x3002;&amp;#x8D4B;&amp;#x503C;&amp;#x540E;&amp;#x4E0D;&amp;#x53EF;&amp;#x6539;&amp;#x53D8;&amp;#x3002;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://rubbishquan.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高程3中关于DOM章节的整理</title>
+    <link href="https://rubbishquan.github.io/2016/12/26/%E9%AB%98%E7%A8%8B3%E4%B8%AD%E5%85%B3%E4%BA%8EDOM%E7%AB%A0%E8%8A%82%E7%9A%84%E6%95%B4%E7%90%86/"/>
+    <id>https://rubbishquan.github.io/2016/12/26/高程3中关于DOM章节的整理/</id>
+    <published>2016-12-26T01:57:05.000Z</published>
+    <updated>2017-02-13T09:52:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Dom&#x662F;HTML/XML&#x7684;&#x4E00;&#x4E2A; API&#xFF0C;&#x63CF;&#x7ED8;&#x4E86;&#x4E00;&#x4E2A;&#x5C42;&#x6B21;&#x5316;&#x7684;&#x8282;&#x70B9;&#x6811;&#x3002;<br>    <a id="more"></a></p>
+<ul>
+<li><p>DOM1</p>
+<ul>
+<li>nodeType<ul>
+<li>Element 1<ul>
+<li>nodeNmae: &#x6807;&#x7B7E;&#x540D;</li>
+<li>&#x7279;&#x6027;<ul>
+<li>getAttribute(attributeName)</li>
+<li>setAttribute(name, value)</li>
+<li>removeAttribute</li>
+</ul>
+</li>
+<li>Attributes&#x5C5E;&#x6027;&#x5305;&#x542B;&#x4E8E;NodeLIst&#x7C7B;&#x4F3C;&#x7684;NamedNodeMap&#x5BF9;&#x8C61;,nodeName&#x662F;&#x7279;&#x6027;&#x540D;&#x79F0;&#xFF0C;nodeValue&#x662F;&#x7279;&#x6027;&#x503C;&#x3002;<ul>
+<li>getNamedItem(name)</li>
+<li>removeNamedItem(name)</li>
+<li>setNamedItem(node)</li>
+<li>item(pos)</li>
+</ul>
+</li>
+<li>createElement(tagName)</li>
+</ul>
+</li>
+<li>Attr 2<ul>
+<li>createAttribute(name)</li>
+</ul>
+</li>
+<li>Text 3<ul>
+<li>nodeName #text</li>
+<li>nodeValue &#x5305;&#x542B;&#x6587;&#x672C;</li>
+<li>splitText(offset)</li>
+<li>createTextNode(data)</li>
+</ul>
+</li>
+<li>Document 9<ul>
+<li>nodeName: #document</li>
+<li>document.title</li>
+<li>document.url</li>
+<li>document.domain</li>
+<li>document.refferrer</li>
+<li>getElementById //&#x5C06;&#x53D6;&#x5F97;&#x7C7B;&#x4F3C;nodeList&#x7684;HTMLCollection&#x5BF9;&#x8C61;</li>
+<li>getElementsByTagName //&#x53EF;&#x4F7F;&#x7528;&#x4F4D;&#x7F6E;&#x6216;&#x540D;&#x5B57;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x9879;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x8282;&#x70B9;&#x5173;&#x7CFB;</p>
+<ul>
+<li>&#x6BCF;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x6709;childNodes&#x5C5E;&#x6027;&#xFF0C;&#x4FDD;&#x5B58;nodeList&#x7C7B;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x3002;<br>&#x5C06;nodeList&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x7EC4;&#xFF1A;var Arr = Array.prototype.slice.call(NodeList, 0)</li>
+<li>&#x6BCF;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x6709;parentNode&#x5C5E;&#x6027;&#xFF0C;chileNodes&#x5217;&#x8868;&#x91CC;&#x7684;&#x6240;&#x6709;&#x8282;&#x70B9;&#x90FD;&#x6307;&#x5411;&#x540C;&#x4E00;&#x4E2A;parentNode&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;previousSibling&#x548C;nextSibling &#x8BBF;&#x95EE;&#x5B83;&#x4EEC;&#x7684;&#x540C;&#x80DE;&#x8282;&#x70B9;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5305;&#x542B;&#x53E6;&#x4E00;&#x4E2A;&#x8282;&#x70B9;,hasChildNodes&#x5C06;&#x8FD4;&#x56DE;true.</li>
+<li>ownerDocument&#x5C06;&#x653E;&#x56DE;Document&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x64CD;&#x4F5C;&#x8282;&#x70B9;(&#x64CD;&#x4F5C;&#x7684;&#x662F;parenNode&#x7684;&#x5B50;&#x8282;&#x70B9;)</p>
+<ol>
+<li>appendChild(appendChild) &#x5411;childNodes&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x8282;&#x70B9;&#x5DF2;&#x5B58;&#x5728;&#xFF0C;&#x5C06;&#x79FB;&#x5230;&#x672B;&#x5C3E;</li>
+<li>insertBefore(newElement, referenceElement) &#x5411;childNodes&#x7684;&#x7279;&#x5B9A;&#x4F4D;&#x7F6E;&#x6DFB;&#x52A0;&#x8282;&#x70B9;&#x3002;<ul>
+<li>someNode.insertBefore(newNode, null) //&#x6210;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</li>
+<li>someNode.insertBefore(newNode, someNode.firstNode) //&#x6210;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</li>
+</ul>
+</li>
+<li>replaceChild <ul>
+<li>var returnedNode = someNode.repalceChild(newNode, someNode.firstChild) //&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x88AB;&#x66FF;&#x6362;</li>
+</ul>
+</li>
+<li>removeChild(child)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Dom&#x6269;&#x5C55;<ul>
+<li>Selectors APILevel 1 <ul>
+<li>querySelector //&#x53D6;&#x5F97;&#x5339;&#x914D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</li>
+<li>querySelectorAll //&#x8FD4;&#x56DE;NodeList&#x5B9E;&#x4F8B;</li>
+</ul>
+</li>
+<li>HTML5<ul>
+<li>getElementsByClassName //&#x8FD4;&#x56DE;NOdeLIst&#x5B9E;&#x4F8B;</li>
+<li>classLIst<ul>
+<li>add</li>
+<li>contains</li>
+<li>remove</li>
+<li>toggle</li>
+</ul>
+</li>
+<li>focus<ul>
+<li>activeElement</li>
+<li>hasfoces</li>
+</ul>
+</li>
+<li>HTMLDocument<ul>
+<li>readyState</li>
+<li>compatMode</li>
+<li>head</li>
+<li>charset</li>
+<li>dataset DOMStringMap&#x5B9E;&#x4F8B;</li>
+<li>innerHTML</li>
+<li>outerHTML</li>
+<li>insertAdjacentHTML</li>
+</ul>
+</li>
+<li>&#x4E13;&#x7528;&#x6269;&#x5C55;<ul>
+<li>documentMode //&lt;meta http-equiv=&#x201D;X-UA-Compatible&#x201D; content=&#x201D;IE=IEVersion&#x201D;</li>
+<li>children</li>
+<li>contains</li>
+<li>innerText</li>
+<li>outerText</li>
+</ul>
+</li>
+<li>scrollIntoView()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Dom2&amp;Dom3<ul>
+<li>style<ul>
+<li>cssText(&#x53EF;&#x5199;)</li>
+</ul>
+</li>
+<li>document.defaultView.getComputedStyle()</li>
+<li>document.styleSheets<ul>
+<li>disabled</li>
+<li>href</li>
+<li>cssRule<ul>
+<li>cssText(&#x53EA;&#x8BFB;)</li>
+<li>selectorText</li>
+<li>style</li>
+</ul>
+</li>
+<li>insertRule</li>
+<li>deleteRule</li>
+</ul>
+</li>
+<li>getBoundingClientRect()</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Dom&amp;#x662F;HTML/XML&amp;#x7684;&amp;#x4E00;&amp;#x4E2A; API&amp;#xFF0C;&amp;#x63CF;&amp;#x7ED8;&amp;#x4E86;&amp;#x4E00;&amp;#x4E2A;&amp;#x5C42;&amp;#x6B21;&amp;#x5316;&amp;#x7684;&amp;#x8282;&amp;#x70B9;&amp;#x6811;&amp;#x3002;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://rubbishquan.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>匿名函数调用</title>
+    <link href="https://rubbishquan.github.io/2016/12/10/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/"/>
+    <id>https://rubbishquan.github.io/2016/12/10/匿名函数调用/</id>
+    <published>2016-12-10T15:24:05.000Z</published>
+    <updated>2017-02-14T01:26:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>&#x533F;&#x540D;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x6CD5;(1)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(function() {</div><div class="line">	// ...</div><div class="line">}())</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x533F;&#x540D;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x6CD5;(2)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(function() {</div><div class="line">	// ...</div><div class="line">})()</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>&#x4F8B;1&#x4E0E;&#x4F8B;2&#x7528;&#x4E8E;&#x201C;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x5E76;&#x8FD4;&#x56DE;&#x503C;&#x201D;&#xFF0C;&#x4E24;&#x79CD;&#x8868;&#x8FBE;&#x5F0F;&#x90FD;&#x6709;&#x4E09;&#x5BF9;&#x62EC;&#x53F7;&#xFF0C;&#x4F46;&#x542B;&#x4E49;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x4F8B;1&#x662F;&#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x4F8B;2&#x662F;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x81EA;&#x8EAB;</p>
+<p>&#x867D;&#x7136;&#x57FA;&#x672C;&#x4E00;&#x81F4;&#xFF0C;&#x4F46;&#x4E8B;&#x5B9E;&#x4E0A;&#x4E24;&#x79CD;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x8FD0;&#x7B97;&#x8FC7;&#x7A0B;&#x7565;&#x6709;&#x4E0D;&#x540C;&#xFF1A;&#x4F8B;1&#x4E2D;&#x662F;&#x7528;&#x6700;&#x5916;&#x9762;&#x7684;&#x4E00;&#x5C42;&#x62EC;&#x53F7;&#x5F3A;&#x5236;&#x8FD0;&#x7B97;&#xFF0C;&#x4F7F;&#x5F97;&#x51FD;&#x6570;&#x5F97;&#x4EE5;&#x6267;&#x884C;&#x3002;&#x4F8B;2&#x4E2D;&#x6700;&#x5916;&#x9762;&#x7684;&#x4E00;&#x5C42;&#x62EC;&#x53F7;&#x662F;&#x4F7F;&#x51FD;&#x6570;&#x58F0;&#x660E;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x81EA;&#x8EAB;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8FD0;&#x7B97;&#x7B26;&#x201C;()&#x201D;&#xFF0C;&#x5728;&#x4F8B;1&#x4E2D;&#x4F5C;&#x7528;&#x4E8E;&#x533F;&#x540D;&#x51FD;&#x6570;&#x81EA;&#x8EAB;&#xFF0C;&#x5728;&#x4F8B;2&#x4E2D;&#x4F5C;&#x7528;&#x4E8E;&#x4E00;&#x4E2A;&#x8FD0;&#x7B97;&#x7684;&#x7ED3;&#x679C;&#x503C;&#x3002;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&amp;#x533F;&amp;#x540D;&amp;#x51FD;&amp;#x6570;&amp;#x7684;&amp;#x8C03;&amp;#x7528;&amp;#x65B9;&amp;#x6CD5;(1)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;(function() {&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	// ...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;}())&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;#x533F;&amp;#x540D;&amp;#x51FD;&amp;#x6570;&amp;#x7684;&amp;#x8C03;&amp;#x7528;&amp;#x65B9;&amp;#x6CD5;(2)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;(function() {&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	// ...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;})()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://rubbishquan.github.io/tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>终极奥秘(读永恒的终结有感)</title>
@@ -54,40 +406,6 @@
     
     
       <category term="书评" scheme="https://rubbishquan.github.io/tags/%E4%B9%A6%E8%AF%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>my first page</title>
-    <link href="https://rubbishquan.github.io/2016/08/10/my-first-page/"/>
-    <id>https://rubbishquan.github.io/2016/08/10/my-first-page/</id>
-    <published>2016-08-10T14:10:09.000Z</published>
-    <updated>2016-10-12T04:34:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>&#x4ECA;&#x5929;&#x5F00;&#x59CB;&#x505A;&#x9875;&#x9762;&#x4ED4;</strong><br>&#x9875;&#x9762;&#x4F7F;&#x7528;&#x4E86;webpack&#x6253;&#x5305;&#x3001;vue&#x6846;&#x67B6;&#x3001;postcss&#x8FD8;&#x6709;CSSModules(&#x5988;&#x5988;&#x518D;&#x4E5F;&#x4E0D;&#x61C2;&#x62C5;&#x5FC3;class&#x51B2;&#x7A81;&#x5566;)&#xFF0C;&#x9644;&#x52A0;&#x4E00;&#x4E9B;&#x5C0F;&#x63D2;&#x4EF6;&#x3002;</p>
- <a id="more"></a>
-<hr>
-<p>&#x8FD9;&#x662F;&#x5728;&#x56FD;&#x5916;&#x7684;&#x67D0;psd&#x7F51;&#x7AD9;&#x4E0A;&#x627E;&#x7684;&#x8BBE;&#x8BA1;&#x56FE;<img src="/2016/08/10/my-first-page/Slice-1.png" class="full-image"></p>
-<hr>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x662F;&#x5728;&#x4E0B;<strong><a href="http://www.lalalavie.com/barek/" target="_blank" rel="external">&#x62D9;&#x4F5C;</a></strong></p>
-<p><del>&#x56E0;&#x4E3A;&#x662F;hexo new page&#xFF0C;&#x7136;&#x540E;&#x518D;deploy&#xFF0C;&#x4E0A;&#x4E0B;&#x6709;&#x4E24;&#x4E2A;br&#x6807;&#x7B7E;&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x770B;&#x5230;&#x4E24;&#x7247;&#x7A7A;&#x683C;&#x767D;&#x533A;&#x57DF;&#xFF0C;&#x867D;&#x7136;&#x80FD;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;html&#x91CC;&#x5F3A;&#x884C;&#x6E05;&#x9664;&#xFF0C;&#x4F46;&#x6BCF;&#x6B21;&#x90E8;&#x7F72;&#x4E4B;&#x540E;&#x53C8;&#x4F1A;&#x4EA7;&#x751F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x77E5;&#x9053;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#xFF0C;&#x6B22;&#x8FCE;&#x544A;&#x8BC9;&#x6211;&#x3002;</del></p>
-<p>&#x7531;&#x4E8E;&#x5F3A;&#x8FEB;&#x75C7;&#x72AF;&#x4E86;&#xFF0C;&#x7ED9;&#x6574;&#x987F;&#x4E86;&#x4E00;&#x4E0B;&#x3002;</p>
-<hr>
-<p>&#x8BF4;&#x8BF4;&#x9057;&#x61BE;&#x4E4B;&#x5904;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x514D;&#x8D39;&#x7684;&#x7F18;&#x6545;&#xFF0C;psd&#x6587;&#x4EF6;&#x53EA;&#x6709;10M&#x4E0D;&#x5230;&#xFF0C;&#x653E;&#x8FDB;sketch&#x91CC;&#x8FDB;&#x884C;&#x50CF;&#x7D20;&#x6D4B;&#x91CF;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x50BB;&#x4E86;&#xFF0C;&#x8FD8;&#x539F;&#x8BBE;&#x8BA1;&#x56FE;&#x57FA;&#x672C;&#x62FF;&#x773C;&#x770B;&#x3002;&#x76EE;&#x524D;&#x8FD8;&#x6CA1;&#x6709;&#x505A;&#x54CD;&#x5E94;&#x5F0F;&#x5E03;&#x5C40;&#xFF0C;&#x641E;&#x4E0D;&#x5B9A;&#x7684;&#x5730;&#x65B9;&#x4F7F;&#x7528;relative: absolute&#xFF0C;&#x653E;&#x5927;&#x540E;&#x9875;&#x9762;&#x4F1A;&#x51FA;&#x73B0;&#x79FB;&#x4F4D;&#x73B0;&#x8C61;&#x90FD;&#x662F;&#x5F85;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;&amp;#x4ECA;&amp;#x5929;&amp;#x5F00;&amp;#x59CB;&amp;#x505A;&amp;#x9875;&amp;#x9762;&amp;#x4ED4;&lt;/strong&gt;&lt;br&gt;&amp;#x9875;&amp;#x9762;&amp;#x4F7F;&amp;#x7528;&amp;#x4E86;webpack&amp;#x6253;&amp;#x5305;&amp;#x3001;vue&amp;#x6846;&amp;#x67B6;&amp;#x3001;postcss&amp;#x8FD8;&amp;#x6709;CSSModules(&amp;#x5988;&amp;#x5988;&amp;#x518D;&amp;#x4E5F;&amp;#x4E0D;&amp;#x61C2;&amp;#x62C5;&amp;#x5FC3;class&amp;#x51B2;&amp;#x7A81;&amp;#x5566;)&amp;#xFF0C;&amp;#x9644;&amp;#x52A0;&amp;#x4E00;&amp;#x4E9B;&amp;#x5C0F;&amp;#x63D2;&amp;#x4EF6;&amp;#x3002;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="html" scheme="https://rubbishquan.github.io/tags/html/"/>
-    
-      <category term="css" scheme="https://rubbishquan.github.io/tags/css/"/>
-    
-      <category term="vue" scheme="https://rubbishquan.github.io/tags/vue/"/>
     
   </entry>
   

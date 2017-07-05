@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -104,15 +104,16 @@
 
 
 
-<meta name="description" content="pinker&apos;s blog | html | css | javascript | think">
-<meta property="og:type" content="website">
-<meta property="og:title" content="红辣椒">
-<meta property="og:url" content="https://rubbishquan.github.io/tags/css/index.html">
+<meta name="description" content="slice()&amp;#x548C;subsring()&amp;#x7684;&amp;#x7B2C;&amp;#x4E8C;&amp;#x4E2A;&amp;#x53C2;&amp;#x6570;&amp;#x662F;&amp;#x5B50;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x4E2D;&amp;#x6700;&amp;#x540E;&amp;#x4E00;&amp;#x4E2A;&amp;#x5B57;&amp;#x7B26;&amp;#x540E;&amp;#x9762;&amp;#x7684;&amp;#x4F4D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="slice、substr、substring区别">
+<meta property="og:url" content="https://rubbishquan.github.io/2017/01/10/slice、substr、substring区别md/index.html">
 <meta property="og:site_name" content="红辣椒">
-<meta property="og:description" content="pinker&apos;s blog | html | css | javascript | think">
+<meta property="og:description" content="slice()&amp;#x548C;subsring()&amp;#x7684;&amp;#x7B2C;&amp;#x4E8C;&amp;#x4E2A;&amp;#x53C2;&amp;#x6570;&amp;#x662F;&amp;#x5B50;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x4E2D;&amp;#x6700;&amp;#x540E;&amp;#x4E00;&amp;#x4E2A;&amp;#x5B57;&amp;#x7B26;&amp;#x540E;&amp;#x9762;&amp;#x7684;&amp;#x4F4D">
+<meta property="og:updated_time" content="2017-02-14T01:08:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="红辣椒">
-<meta name="twitter:description" content="pinker&apos;s blog | html | css | javascript | think">
+<meta name="twitter:title" content="slice、substr、substring区别">
+<meta name="twitter:description" content="slice()&amp;#x548C;subsring()&amp;#x7684;&amp;#x7B2C;&amp;#x4E8C;&amp;#x4E2A;&amp;#x53C2;&amp;#x6570;&amp;#x662F;&amp;#x5B50;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x4E2D;&amp;#x6700;&amp;#x540E;&amp;#x4E00;&amp;#x4E2A;&amp;#x5B57;&amp;#x7B26;&amp;#x540E;&amp;#x9762;&amp;#x7684;&amp;#x4F4D">
 
 
 
@@ -133,9 +134,9 @@
 
 
 
-  <link rel="canonical" href="https://rubbishquan.github.io/tags/css/"/>
+  <link rel="canonical" href="https://rubbishquan.github.io/2017/01/10/slice、substr、substring区别md/"/>
 
-  <title> 标签: css | 红辣椒 </title>
+  <title> slice、substr、substring区别 | 红辣椒 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -156,7 +157,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,46 +235,132 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        css
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                slice、substr、substring区别
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-10T20:20:05+08:00" content="2017-01-10">
+              2017-01-10
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>slice()&#x548C;subsring()&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x540E;&#x9762;&#x7684;&#x4F4D;&#x7F6E;<br>substr()&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x7684;&#x4E2A;&#x6570;<br>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;&#x4F5C;&#x4E3A;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;<br>    <a id="more"></a><br>&#x5982;&#x679C;&#x53C2;&#x6570;&#x662F;&#x8D1F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;</p>
+<ul>
+<li>slice&#x5C06;&#x4F20;&#x5165;&#x7684;&#x8D1F;&#x503C;&#x4E8E;&#x4E0E;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;&#x76F8;&#x52A0;</li>
+<li>substr&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;&#x52A0;&#x4E0A;&#x4F20;&#x5165;&#x7684;&#x8D1F;&#x503C;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;0</li>
+<li>substring&#x5C06;&#x6240;&#x6709;&#x7684;&#x8D1F;&#x503C;&#x90FD;&#x8F6C;&#x6362;&#x4E3A;0</li>
+</ul>
+<p>//&#x4F8B;&#x5B50;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var stringValue = &quot;hello world&quot;;</div><div class="line"></div><div class="line">alert(stringValue.slice(-3));</div><div class="line">alert(stringValue.substring(-3));</div><div class="line">alert(stringValue.substr(-3));</div><div class="line">alert(stringValue.slice(3, -4));</div><div class="line">alert(stringValue.substring(3, -4));</div><div class="line">alert(stringValue.substr(3, -4));</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">//&quot;rld&quot; //&quot;hello world&quot; //&quot;rld&quot;</div><div class="line">//&quot;lo w&quot; //&quot;hel&quot; //&quot;&quot;</div></pre></td></tr></table></figure></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/08/10/my-first-page/" itemprop="url">
-              
-                <span itemprop="name">my first page</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-10T22:10:09+08:00"
-              content="2016-08-10" >
-          08-10
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/01/影响到this的取值的几种情况/" rel="next" title="影响到this的取值的几种情况">
+                <i class="fa fa-chevron-left"></i> 影响到this的取值的几种情况
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/14/var bind = Function.prototype.call.bind(Function.prototype.bind)/" rel="prev" title="var bind = Function.prototype.call.bind(Function.prototype.bind)">
+                var bind = Function.prototype.call.bind(Function.prototype.bind) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -281,6 +368,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -300,8 +391,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpeg"
@@ -312,7 +412,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -322,7 +422,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -363,6 +463,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -377,7 +488,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -465,6 +576,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
