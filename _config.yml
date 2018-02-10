@@ -82,4 +82,4 @@ archive_generator:
 deploy:
   type: git
   repo: git@github.com:rubbishquan/rubbishquan.github.io.git
-  branch: gh-pages
+  branch: master
